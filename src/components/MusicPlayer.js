@@ -225,8 +225,6 @@ function MusicPlayer({ track, onPrevious, onNext, hasPrevious, hasNext, onAddToP
         setIsPlaying(false);
         stopProgressUpdate();
       };
-        stopProgressUpdate();
-      };
 
       audio.addEventListener('play', handlePlay);
       audio.addEventListener('pause', handlePause);
@@ -252,7 +250,7 @@ function MusicPlayer({ track, onPrevious, onNext, hasPrevious, hasNext, onAddToP
         setError(null);
       };
     }
-  }, [track, volume, isPlaying]);
+  }, [track, volume, isPlaying, startProgressUpdate, stopProgressUpdate]);
 
   useEffect(() => {
     if (audioRef.current) {
